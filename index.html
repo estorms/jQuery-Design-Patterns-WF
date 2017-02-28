@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery &amp Web Forms</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class= "container-fluid">
+<h1>Design Patterns in jQuery // Web Forms</h1>
+<div class="header_buttons">
+<button type="button" class="btn btn-primary top-button" data-assigned-id="iterator">Iterator / Composite</button>
+
+<button type="button" class="btn btn-warning top-button" data-assigned-id="observer">Observer</button>
+
+<button type="button" class="btn btn-success top-button" data-assigned-id="lazy">Lazy Initialization</button>
+
+<button type="button" class="btn btn-danger top-button" data-assigned-id="proxy">Proxy</button>
+<button type="button" class="btn btn-info top-button" data-assigned-id="webforms">.NET Web Forms</button>
+
+</div>
+<div class="row">
+
+<div class="card-deck">
+<div id="iterator" class="hidden card-hider">
+<div class="col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Iterator / Composite</h4>
+      <p class="card-text">The Iterator design pattern refers to code that traverses a collection and performs an operation or assessment on each component. The Composite pattern revolves around compositional relationships: single objects (parts) are composed into a component whole (aka, the "composite"). jQuery's ".each()" method exemplifies both patterns: it iterates over each item in a specified collection and in so doing, treats them as a single object. Click the link below to submit a console.log() for each of the above buttons.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><button type="button" class="btn btn-link iter">Iterate!</button>
+</small>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div id="observer" class="hidden card-hider">
+  <div class="col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Observer</h4>
+      <p class="card-text">The Observer design pattern, in which objects subscribe to an event and then perform a function, manifests everywhere jQuery uses ".on('&ltevent&gt', function (e) ...)" to abstract a vanilla JS event-handler for a click, keyup, mouseover, or other event.</p><p>The ".off()" function allows an observer to unsubscribe from an event, which may make "on('&lt event &gt' ...)" preferable to an alternate shorthand syntax like "(&ltelem&gt).click()". The "on()" version also works for dynamically loaded elements.</p>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+</div>
+</div>
+<div id="lazy" class="hidden card-hider">
+<div class="col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Lazy Initialization</h4>
+      <p class="card-text">Lazy Initialization is a design pattern that delays an operation--e.g., the creation of an object or collection or calculation of a value, until some other criterion is met. jQuery's "$(document).ready()" function delays loading the code it encloses until the DOM is ready to manipulate; the functionality embedded within the "$(document).ready()" statement therefore responds quickly to user interaction.</p>
+    </div>
+    <div class="card-footer">
+    </div>
+  </div>
+</div>
+</div>
+<div id="proxy" class="hidden card-hider">
+<div class="col-md-6 offset-md-3">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Proxy / Surrogate</h4>
+        <p class="card-text">A proxy (aka surrogate) is an object that functions as an interface or means of access to another object. The jQuery $.proxy function can be used to control what 'this' signifies in JavaScript when performing an operation in which the execution context needs circumventing, e.g., setting a timeout on a button when that button is clicked (rather than on the window object, which would otherwise serve as the execution context).</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><button type="button" class="btn btn-link proxy" id="proxy-button">Use a Proxy With a Timeout</button></small>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+ <div id="webforms" class="hidden card-hider">
+ <div class="col-md-12">
+ <h2>Overview</h2>
+<div id="overview"><p>ASP.NET Web Forms  are event-driven web pages that use server controls for HTML rendering, event-handling, and validation. They use a "code-behind" model that partitions business logic (the "code behind" the markup), written in C# or VB.NET, from the HTML rendered by the server. Unlike ASP.NET MVC applications, Web Forms preserve state over HTTP. For example, the ViewState property can be used to preserve values during multiple requests for the same page (despite the browser's default behavior of complete-page reprocessing whenever it receives a new request). Similarly, the ControlState property preserves information about page state but unlike ViewState, cannot be turned off on the page level. </p>
+</div>
+</div>
+<div class="col-md-12">
+<div id="databinding">
+<h2>Data Binding</h2>
+<p>Web Forms can retrieve data from a variety of sources, including XML files, databases, and custom objects, and bind it to web controls via data source controls by passing the web control a DataSourceID.</p>
+<h4>Sample Web Server Controls</h4>
+<ul>
+  <li>GridView Control: Presents data as a table; allows single-cell edit or deletion</li>
+  <li>ListView Control: Presents data according to a custom format defined in a template; allows edit, deletion, and insertion</li>
+  <li>DetailsView Control: Presents a single record in a table-based layout; allows edit, deletion, and insertion</li>
+  <li>FormView Control: Also presents a single record, but without a built-in layout; layouts must be created in a template (or the RenderTable property set to "true").</li>
+</ul>
+<h6>FormView Code Snippet</h6>
+<div class="code-snippet">&ltasp:FormView ID="FormView1" runat="server" 
+DataSourceID="ObjectDataSource1"&gt
+...
+&ltasp:FormView&gt</div>
+<h4>Sample Data Controls</h4>
+<ul>
+  <li>SqlDataSource Control: represents a session with a relationship database, e.g., SQL Server. Data is returned as a DataSet, accessed via a Connection String, and manipulated via SQL commands. Filtering, sorting, and paging are supported.</li>
+  <li>LinqDataSource: Uses declarative HTML execute LINQ commands on a data object. Also supports filtering, sorting, and paging through data.</li>
+  <li>XMLDataSource: Allows retrieval of data from XML files; often used in tandem with hierarchical web controls like Menu and TreeView.</li>
+</ul>
+<h6>SqlDataSource Code Snippet</h6>
+
+<div class="code-snippet">&ltasp:SqlDataSource ID="ProductsDataSource" runat="server"
+    ConnectionString="<%$ ConnectionStrings:NORTHWNDConnectionString %>"
+    SelectCommand="SELECT [ProductID], [ProductName], [UnitPrice] FROM [Products]">
+&lt/asp:SqlDataSource&gt
+</div>
+</div>
+</div>
+<div class="col-md-12">
+<div id="lifecycle">
+<h2>Life Cycle</h2>
+<ol>
+<li>Page Request: The client sends a request, trigging the framework to determine whether server-side code must parse and compile the page or send a cached version.</li>
+<li>Start Stage: The server sets the page's core properties, including those essential to HTTP, Response and Request, and determines whether the page is a user-triggered PostBack or initial load.</li>
+<li>Initialization: The master page, which stores the page's header and footer and into which other pages are injected, is created; properties like UniqueID are established on server controls.</li>
+<li>Load: The page loads to the browser. If it is a postback, information from ViewState and ControlState persists.</li>
+<li>Postback Event Handling: If the request is a postback, validator controls to check form input are called so that the page user can be notified accordingly.</li>
+<li>Rendering: The Render method is called on each control to deliver markup to the browser; the ViewState is preserved.</li>
+<li>Unload: Cleanup / garbage collection</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </body>
+<script src="script.js"></script>
+</body>
+</html>
