@@ -2,21 +2,15 @@ h1, .header_buttons {
     text-align: center;
     margin-top: 15px;
 }
-table {
-    margin: 0 auto;
-}
 .row {
     margin-top: 50px;
 }
-
 .hidden {
     display: none;
 }
-
 p, h2, h3, h4, ul, ol, h6 {
     margin-left: 5vw;
 }
-
 .code-snippet {
     border: 1px solid black;
     box-shadow: 1px 1px 1px;
