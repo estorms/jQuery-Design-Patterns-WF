@@ -14,10 +14,30 @@ p, h2, h3, h4, ul, ol, h6 {
 .code-snippet {
     border: 1px solid black;
     box-shadow: 1px 1px 1px;
-    margin-left: 5vw;
-    margin-bottom: 3vh;
+    padding: 0px 3px;
     display: inline-block;
     font-size: small;
     background-color: lightblue;
     font-weight: bold;
+}
+
+div.code-snippet {
+    margin-left: 5vw;
+    margin-bottom: 3vh;
+}
+h2 {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 1px 5px;
+    box-shadow: 2px 2px 2px;
+    display: inline-block;
+    background-color: lightyellow;
+}
+
+.card {
+    box-shadow: 3px 2px 3px;
+}
+
+h6 {
+    font-style: italic;
 }
